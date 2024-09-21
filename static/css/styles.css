@@ -28,7 +28,7 @@ h1 {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
+    width: 25%; /* Reducir a 25% o el valor que prefieras */
     text-align: center;
     padding: 20px;
     transition: transform 0.2s;
@@ -94,6 +94,11 @@ footer p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
+    margin-top: 20px; /* Añadir margen superior */
+    margin-left: 30px; /* Añadir margen a la izquierda */
+    margin-right: 80px; /* Añadir margen a la derecha */
+    line-height: 1.5; /* Espaciado entre líneas */
+    text-align: justify; /* Alinear texto justificado para mejor presentación */
 }
 
 form {
@@ -121,4 +126,15 @@ input[type="number"] {
 
 .boton-comprar:hover {
     background-color: #218838;
+}
+
+#producto-descripcion ul {
+    list-style-position: inside; /* Mueve el punto de la lista dentro del texto */
+    text-align: center;           /* Centra el texto */
+    padding-left: 0;              /* Elimina el padding predeterminado de la lista */
+    margin: 0 auto;               /* Centra la lista */
+}
+
+#producto-descripcion li {
+    margin-bottom: 10px;          /* Espacio entre los elementos de la lista */
 }

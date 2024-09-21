@@ -11,20 +11,39 @@
             1: {
                 nombre: 'Ventilador Turbo Silence Compact Samurai 14 Pulgadas',
                 precio: '$200.000 COP',
-                descripcion: 'Diámetro: 14 " Refresca los ambientes sin ruidos molestos. Se ajusta a diferentes alturas. Ventilador de 3 velocidades. Potencia de 60 W. Cuenta con rejilla extraíble. Ideal para refrigerar.',
+                descripcion: [
+                    'Diámetro: 14"',
+                    'Refresca los ambientes sin ruidos molestos.',
+                    'Se ajusta a diferentes alturas.',
+                    'Ventilador de 3 velocidades.',
+                    'Potencia de 60 W.',
+                    'Cuenta con rejilla extraíble.',
+                    'Ideal para refrigerar.'
+                ],
                 imagen: 'static/imagenes/ventilador.jpeg'
             },
             2: {
                 nombre: 'Silla Gamer Escritorio Ergonomica Giratoria Ajustable',
                 precio: '$450.000 COP',
-                descripcion: 'Fabricada con acero reforzado, esta silla garantiza durabilidad y estabilidad. Su pistón hidráulico de clase 3 soporta hasta 150 kg, ideal para usuarios de diferentes tamaños. El respaldo alto y el asiento están diseñados para personas de altura entre 160 y 180 cm, ofreciendo un soporte óptimo para tu espalda durante largas sesiones.',
+                descripcion: [
+                    'Fabricada con acero reforzado para durabilidad y estabilidad.',
+                    'Pistón hidráulico de clase 3 que soporta hasta 150 kg.',
+                    'Diseñada para personas de altura entre 160 y 180 cm.',
+                    'Soporte óptimo para la espalda durante largas sesiones.'
+                ],
                 imagen: 'static/imagenes/silla.jpeg'
             },
             3: {
-                nombre: 'Producto 3',
-                precio: '$600.000 COP',
-                descripcion: 'PESO MÁXIMO QUE SOPORTA: 100 kg, PESO DEL PRODUCTO: 20 kg, MEDIDAS DEL PRODUCTO: 97 CM ALTO, 86,4 CM LARGO, 45,6 CM ANCHO.',
-                imagen: 'static/imagenes/bicicleta.jpeg'
+                nombre: 'Bicicleta Spinning Urbino Sportfitness Banda Gym Estatica Color Negro',
+                precio: '$750.000 COP',
+                descripcion: [
+                    'Incluye computadora con múltiples funciones.',
+                    'Soporta hasta 100 kg.',
+                    'El asiento se puede ajustar.',
+                    'El asiento se puede ajustar.',
+                    'Medidas: Largo 100,5cm Ancho 49,5cm Alto 115cm.',
+                ],
+                imagen: 'static/imagenes/bicicleta2.png'
             }
         };
 
@@ -38,7 +57,22 @@
                 document.getElementById('producto-nombre').textContent = producto.nombre;
                 document.getElementById('producto-imagen').src = producto.imagen;
                 document.getElementById('producto-precio').textContent = producto.precio;
-                document.getElementById('producto-descripcion').textContent = producto.descripcion;
+
+                document.getElementById('producto-precio').innerHTML = `<strong style="font-size: 1.5em; font-weight: bold;">${producto.precio}</strong>`;
+
+                // Crear una lista de la descripción
+                const descripcionLista = document.getElementById('producto-descripcion');
+                descripcionLista.innerHTML = '';  // Limpiar cualquier contenido anterior
+                const ul = document.createElement('ul');  // Crear la lista no ordenada
+
+                // Agregar cada elemento de la descripción como un ítem de lista
+                producto.descripcion.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    ul.appendChild(li);
+                });
+
+                descripcionLista.appendChild(ul);  // Agregar la lista al contenedor
             } else {
                 document.getElementById('producto-contenido').innerHTML = '<p>Producto no encontrado</p>';
             }
@@ -49,7 +83,7 @@
 </head>
 <body>
     <header>
-        <h1>Detalle del Producto</h1>
+        <h1>Detalles del Producto</h1>
     </header>
 
     <!-- Sección donde se mostrará el detalle del producto -->
@@ -57,7 +91,7 @@
         <h2 id="producto-nombre">Nombre del Producto</h2>
         <img id="producto-imagen" src="" alt="Imagen del Producto">
         <p id="producto-precio"></p>
-        <p id="producto-descripcion"></p>
+        <div id="producto-descripcion"></div>
 
         <form action="#" method="POST">
             <label for="cantidad">Cantidad:</label>
