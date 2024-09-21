@@ -1,0 +1,124 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.productos {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.producto {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.precio {
+    font-size: 1.2rem;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.boton-ver {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.boton-ver:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Página de detalle del producto */
+.detalle-producto {
+    text-align: center;
+    margin: 20px;
+}
+
+.detalle-producto img {
+    width: 300px; /* Ancho fijo */
+    height: auto; /* Mantener la proporción */
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.boton-comprar {
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.boton-comprar:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script>
+        // Datos de los productos
+        const productos = {
+            1: {
+                nombre: 'Ventilador Turbo Silence Compact Samurai 14 Pulgadas',
+                precio: '200000 COP',
+                descripcion: 'Diámetro: 14 " Refresca los ambientes sin ruidos molestos. Se ajusta a diferentes alturas. Ventilador de 3 velocidades. Potencia de 60 W. Cuenta con rejilla extraíble. Ideal para refrigerar.',
+                imagen: 'C:\\Users\\Samuel Vergara\\Desktop\\Electiva 2\\Productos\\static\\imagenes\\ventilador.jpeg'
+            },
+            2: {
+                nombre: 'Silla Gamer Escritorio Ergonomica Giratoria Ajustable',
+                precio: '450000 COP',
+                descripcion: 'Fabricada con acero reforzado, esta silla garantiza durabilidad y estabilidad. Su pistón hidráulico de clase 3 soporta hasta 150 kg, ideal para usuarios de diferentes tamaños. El respaldo alto y el asiento están diseñados para personas de altura entre 160 y 180 cm, ofreciendo un soporte óptimo para tu espalda durante largas sesiones.',
+                imagen: 'C:\\Users\\Samuel Vergara\\Desktop\\Electiva 2\\Productos\\static\\imagenes\\silla.jpeg'
+            },
+            3: {
+                nombre: 'Producto 3',
+                precio: '600000 COP',
+                descripcion: 'PESO MÁXIMO QUE SOPORTA: 100 kg, PESO DEL PRODUCTO: 20 kg, MEDIDAS DEL PRODUCTO: 97 CM ALTO, 86,4 CM LARGO, 45,6 CM ANCHO.',
+                imagen: 'C:\\Users\\Samuel Vergara\\Desktop\\Electiva 2\\Productos\\static\\imagenes\\bicicleta.jpeg'
+            }
+        };
+
+        // Función para mostrar el producto según el ID
+        function mostrarProducto() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('producto');
+            const producto = productos[productId];
+
+            if (producto) {
+                document.getElementById('producto-nombre').textContent = producto.nombre;
+                document.getElementById('producto-imagen').src = producto.imagen;
+                document.getElementById('producto-precio').textContent = producto.precio;
+                document.getElementById('producto-descripcion').textContent = producto.descripcion;
+            } else {
+                document.getElementById('producto-contenido').innerHTML = '<p>Producto no encontrado</p>';
+            }
+        }
+
+        window.onload = mostrarProducto;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Detalle del Producto</h1>
+    </header>
+
+    <!-- Sección donde se mostrará el detalle del producto -->
+    <section id="producto-contenido" class="detalle-producto">
+        <h2 id="producto-nombre">Nombre del Producto</h2>
+        <img id="producto-imagen" src="" alt="Imagen del Producto">
+        <p id="producto-precio"></p>
+        <p id="producto-descripcion"></p>
+
+        <form action="#" method="POST">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" value="1" min="1">
+            <button type="submit" class="boton-comprar">Agregar al Carrito</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Tienda de Productos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
