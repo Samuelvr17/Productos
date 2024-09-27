@@ -1,9 +1,9 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Gradiente suave */
 }
 
 header {
@@ -26,26 +26,27 @@ h1 {
 
 .producto {
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 25%; /* Reducir a 25% o el valor que prefieras */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 25%;
     text-align: center;
     padding: 20px;
-    transition: transform 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .producto:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
 }
 
 .producto img {
     width: 100%;
     height: auto;
-    border-radius: 8px 8px 0 0;
+    border-radius: 12px 12px 0 0;
 }
 
 .precio {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #28a745;
     margin-bottom: 15px;
 }
@@ -54,16 +55,35 @@ h1 {
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 6px;
     font-weight: bold;
     display: inline-block;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .boton-ver:hover {
     background-color: #0056b3;
+    transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
 }
+
+/* Estilos para el botón de Volver al Inicio */
+.boton-index {
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px; /* Margen superior para separarlo del contenido */
+    transition: background-color 0.2s;
+}
+
+.boton-index:hover {
+    background-color: #0056b3;
+}
+
 
 footer {
     background-color: #333;
@@ -81,24 +101,27 @@ footer p {
 /* Página de detalle del producto */
 .detalle-producto {
     text-align: center;
-    margin: 20px;
+    margin: 50px auto; /* Margen superior e inferior aumentados */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 50px; /* Aumenta el padding interno */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 900px; /* Define un ancho máximo para el contenedor */
 }
 
 .detalle-producto img {
-    width: 300px; /* Ancho fijo */
-    height: auto; /* Mantener la proporción */
+    width: 300px;
+    height: auto;
     margin-bottom: 20px;
 }
 
 .descripcion {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-    margin-top: 20px; /* Añadir margen superior */
-    margin-left: 30px; /* Añadir margen a la izquierda */
-    margin-right: 80px; /* Añadir margen a la derecha */
-    line-height: 1.5; /* Espaciado entre líneas */
-    text-align: justify; /* Alinear texto justificado para mejor presentación */
+    font-size: 1.1rem;
+    color: #444;
+    margin: 20px auto;
+    max-width: 600px;
+    line-height: 1.6;
+    text-align: justify;
 }
 
 form {
@@ -111,6 +134,8 @@ input[type="number"] {
     padding: 5px;
     font-size: 1rem;
     margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .boton-comprar {
@@ -121,20 +146,21 @@ input[type="number"] {
     border-radius: 5px;
     font-weight: bold;
     display: inline-block;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .boton-comprar:hover {
     background-color: #218838;
+    transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
 }
 
 #producto-descripcion ul {
-    list-style-position: inside; /* Mueve el punto de la lista dentro del texto */
-    text-align: center;           /* Centra el texto */
-    padding-left: 0;              /* Elimina el padding predeterminado de la lista */
-    margin: 0 auto;               /* Centra la lista */
+    list-style-position: inside;
+    text-align: center;
+    padding-left: 0;
+    margin: 0 auto;
 }
 
 #producto-descripcion li {
-    margin-bottom: 10px;          /* Espacio entre los elementos de la lista */
+    margin-bottom: 10px;
 }
