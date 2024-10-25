@@ -67,7 +67,7 @@ h1 {
 }
 
 .boton-ver {
-    background-color: #007bff;
+    background-color: #00d9ff;
     color: #fff;
     text-decoration: none;
     padding: 12px 25px;
@@ -78,7 +78,7 @@ h1 {
 }
 
 .boton-ver:hover {
-    background-color: #0056b3;
+    background-color: #009bb3;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -97,12 +97,12 @@ h1 {
 }
 
 .boton-index:hover {
-    background-color: #0056b3;
+    background-color: #00b383;
     transform: scale(1.1); /* Leve escala en hover */
 }
 
 footer {
-    background-color: #222;
+    background-color: #2c1b1b;
     color: #fff;
     text-align: center;
     padding: 15px;
@@ -152,7 +152,7 @@ input[type="number"] {
 }
 
 .boton-comprar {
-    background-color: #28a745;
+    background-color: #0bfd43;
     color: #fff;
     text-decoration: none;
     padding: 12px 25px;
