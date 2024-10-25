@@ -3,155 +3,169 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Gradiente suave */
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    background-size: 400% 400%; /* Para animación del gradiente */
+    animation: gradient-animation 10s ease infinite;
+}
+
+/* Animación del gradiente */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
+    letter-spacing: 1px; /* Espacio entre letras */
 }
 
 h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    text-transform: uppercase;
 }
 
 .productos {
     display: flex;
+    flex-wrap: wrap; /* Para mejorar la responsividad */
     justify-content: space-around;
-    margin: 20px;
+    margin: 30px;
+    gap: 20px;
 }
 
 .producto {
     background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    width: 25%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Ajuste responsivo */
+    min-width: 250px; /* Ancho mínimo */
     text-align: center;
     padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .producto img {
     width: 100%;
     height: auto;
-    border-radius: 12px 12px 0 0;
+    border-radius: 15px 15px 0 0;
 }
 
 .precio {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #28a745;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .boton-ver {
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 25px;
+    border-radius: 8px;
     font-weight: bold;
     display: inline-block;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .boton-ver:hover {
     background-color: #0056b3;
-    transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para el botón de Volver al Inicio */
+/* Botón Volver al Inicio */
 .boton-index {
-    background-color: #0056b333;
+    background-color: rgba(0, 91, 179, 0.2);
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 8px;
     font-weight: bold;
     display: inline-block;
-    margin-top: 20px; /* Margen superior para separarlo del contenido */
-    transition: background-color 0.2s;
+    margin-top: 25px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .boton-index:hover {
     background-color: #0056b3;
+    transform: scale(1.1); /* Leve escala en hover */
 }
-
 
 footer {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-}
-
-footer p {
-    margin: 0;
+    padding: 15px;
+    margin-top: 30px;
     font-size: 0.9rem;
 }
 
 /* Página de detalle del producto */
 .detalle-producto {
     text-align: center;
-    margin: 50px auto; /* Margen superior e inferior aumentados */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
-    padding: 50px; /* Aumenta el padding interno */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    max-width: 900px; /* Define un ancho máximo para el contenedor */
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
 }
 
 .detalle-producto img {
-    width: 300px;
+    width: 350px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .descripcion {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #444;
-    margin: 20px auto;
+    margin: 25px auto;
     max-width: 600px;
-    line-height: 1.6;
+    line-height: 1.75;
     text-align: justify;
 }
 
+/* Estilos del formulario */
 form {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 input[type="number"] {
-    width: 60px;
-    padding: 5px;
+    width: 70px;
+    padding: 6px;
     font-size: 1rem;
-    margin-right: 10px;
+    margin-right: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .boton-comprar {
     background-color: #28a745;
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 8px;
     font-weight: bold;
     display: inline-block;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
 .boton-comprar:hover {
     background-color: #218838;
-    transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #producto-descripcion ul {
@@ -162,5 +176,5 @@ input[type="number"] {
 }
 
 #producto-descripcion li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
